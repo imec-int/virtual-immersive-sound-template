@@ -24,97 +24,122 @@ using UnityEngine;
 
 public class ControllerGrabObject : MonoBehaviour
 {
-    private SteamVR_TrackedObject trackedObj;
+	private SteamVR_TrackedObject trackedObj;
 
-    private GameObject collidingObject;
-    private GameObject objectInHand;
+	private GameObject collidingObject;
+	private GameObject objectInHand;
+	private float OrbitSpeed = 10.0f;
+	private bool thrown = false;
+	public MusicianResponder mr; 
+	public enum swirl {
+		nothing, left, right
+	};
 
-    private SteamVR_Controller.Device Controller
-    {
-        get { return SteamVR_Controller.Input((int)trackedObj.index); }
-    }
+	private SteamVR_Controller.Device Controller {
+		get { return SteamVR_Controller.Input ((int)trackedObj.index); }
+	}
 
-    void Awake()
-    {
-        trackedObj = GetComponent<SteamVR_TrackedObject>();
-    }
+	void Awake ()
+	{
+		trackedObj = GetComponent<SteamVR_TrackedObject> ();
+	}
 
 
-    public void OnTriggerEnter(Collider other)
-    {
-        SetCollidingObject(other);
-    }
+	public void OnTriggerEnter (Collider other)
+	{
+		SetCollidingObject (other);
+	}
 
-    public void OnTriggerStay(Collider other)
-    {
-        SetCollidingObject(other);
-    }
+	public void OnTriggerStay (Collider other)
+	{
+		SetCollidingObject (other);
+	}
 
-    public void OnTriggerExit(Collider other)
-    {
-        if (!collidingObject)
-        {
-            return;
-        }
+	public void OnTriggerExit (Collider other)
+	{
+		if (!collidingObject) {
+			return;
+		}
 
-        collidingObject = null;
-    }
+		collidingObject = null;
+	}
 
-    private void SetCollidingObject(Collider col)
-    {
-        if (collidingObject || !col.GetComponent<Rigidbody>())
-        {
-            return;
-        }
+	private void SetCollidingObject (Collider col)
+	{
+		if (collidingObject || !col.GetComponent<Rigidbody> ()) {
+			return;
+		}
 
-        collidingObject = col.gameObject;
-    }
+		collidingObject = col.gameObject;
+	}
 
-    void Update()
-    {
-        if (Controller.GetHairTriggerDown())
-        {
-            if (collidingObject)
-            {
-                GrabObject();
-            }
-        }
+	void Update ()
+	{
+//		if (objectInHand) {
+//			if (Controller.GetPress (SteamVR_Controller.ButtonMask.Touchpad)) {
+//				Vector2 touchpad = (Controller.GetAxis (Valve.VR.EVRButtonId.k_EButton_Axis0));
+//				if (touchpad.x > 0.7f) {
+//					Debug.Log ("Right");
+//					mr.sw = (MusicianResponder.swirl)swirl.right;
+//					ReleaseObject ();
+//				} else if (touchpad.x < 0.7f) {
+//					Debug.Log ("Left");
+//					mr.sw = (MusicianResponder.swirl)swirl.left;
+//					ReleaseObject ();
+//				} else
+//					mr.sw = (MusicianResponder.swirl)swirl.nothing;
+//			}
+//			else
+//				mr.sw = (MusicianResponder.swirl)swirl.nothing;
+//		}
 
-        if (Controller.GetHairTriggerUp())
-        {
-            if (objectInHand)
-            {
-                ReleaseObject();
-            }
-        }
-    }
+		if (Controller.GetHairTriggerDown ()) {
+			if (collidingObject) {
+				GrabObject ();
+			}
+		}
 
-    private void GrabObject()
-    {
-        objectInHand = collidingObject;
-        collidingObject = null;
-        var joint = AddFixedJoint();
-        joint.connectedBody = objectInHand.GetComponent<Rigidbody>();
-    }
+		if (Controller.GetHairTriggerUp ()) {
+			if (objectInHand) {
+				ReleaseObject ();
+			}
+		}
 
-    private FixedJoint AddFixedJoint()
-    {
-        FixedJoint fx = gameObject.AddComponent<FixedJoint>();
-        fx.breakForce = 20000;
-        fx.breakTorque = 20000;
-        return fx;
-    }
+	}
 
-    private void ReleaseObject()
-    {
-        if (GetComponent<FixedJoint>())
-        {
-            GetComponent<FixedJoint>().connectedBody = null;
-            Destroy(GetComponent<FixedJoint>());
-            objectInHand.GetComponent<Rigidbody>().velocity = Controller.velocity;
-            objectInHand.GetComponent<Rigidbody>().angularVelocity = Controller.angularVelocity;
-        }
+	private void GrabObject ()
+	{
+		objectInHand = collidingObject;
+		mr = objectInHand.GetComponent<MusicianResponder> ();
 
-        objectInHand = null;
-    }
+		collidingObject = null;
+		var joint = AddFixedJoint ();
+		joint.connectedBody = objectInHand.GetComponent<Rigidbody> ();
+		thrown = false;
+	}
+
+	private FixedJoint AddFixedJoint ()
+	{
+		FixedJoint fx = gameObject.AddComponent<FixedJoint> ();
+		fx.breakForce = 20000;
+		fx.breakTorque = 20000;
+		return fx;
+	}
+
+	private void ReleaseObject ()
+	{
+		if (GetComponent<FixedJoint> ()) {
+			GetComponent<FixedJoint> ().connectedBody = null;
+			Destroy (GetComponent<FixedJoint> ());
+//			if (mr.sw==(MusicianResponder.swirl)swirl.nothing) {
+				objectInHand.GetComponent<Rigidbody> ().velocity = Controller.velocity;
+				objectInHand.GetComponent<Rigidbody> ().angularVelocity = Controller.angularVelocity;
+//			}
+			thrown = true;
+
+		}
+
+
+		objectInHand = null;
+	}
 }

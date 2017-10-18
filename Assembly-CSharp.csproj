@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{E0983720-F695-E1AD-D16C-72256F352D66}</ProjectGuid>
+    <ProjectGuid>{60C65E61-55D6-6400-DEEE-84CCDE4B8606}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -51,8 +51,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AdditionalFeatures.cs" />
      <Compile Include="Assets\MusicianResponder.cs" />
+     <Compile Include="Assets\ObjectPuller.cs" />
      <Compile Include="Assets\OSCstuff\OSC.cs" />
+     <Compile Include="Assets\OSCstuff\OscReceiveHandler.cs" />
      <Compile Include="Assets\OSCstuff\ReceivePosition.cs" />
      <Compile Include="Assets\OSCstuff\SendPositionOnOnMouseDown.cs" />
      <Compile Include="Assets\OSCstuff\SendPositionOnUpdate.cs" />
