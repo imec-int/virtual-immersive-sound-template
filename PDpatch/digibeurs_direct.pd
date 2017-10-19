@@ -1,8 +1,8 @@
-#N canvas 2126 -183 1639 918 10;
+#N canvas 81 118 1356 721 10;
 #X obj 57 57 mrpeach/unpackOSC;
 #X obj 57 34 mrpeach/udpreceive 6161;
 #X text 53 14 Receive From Unity;
-#N canvas 2351 -179 1228 841 soundplayer 0;
+#N canvas 463 45 1228 864 soundplayer 1;
 #X obj 99 390 readsf~;
 #X msg 99 363 0;
 #X obj 99 442 dac~ 5;
@@ -91,7 +91,7 @@
 #X obj 126 321 mrpeach/packOSC;
 #X obj 105 349 mrpeach/udpsend;
 #X obj 179 388 tgl 17 0 empty empty connected 22 8 0 8 -1 -262144 -1
-0 1;
+1 1;
 #X obj 114 377 bng 15 250 50 0 empty empty disconnect 20 6 0 8 -258631
 -1 -1;
 #X obj 114 395 bng 15 250 50 0 empty empty connect 20 6 0 8 -3924 -1
@@ -114,7 +114,7 @@
 #X obj 127 66 mrpeach/packOSC;
 #X obj 106 94 mrpeach/udpsend;
 #X obj 180 133 tgl 17 0 empty empty connected 22 8 0 8 -1 -262144 -1
-0 1;
+1 1;
 #X obj 115 122 bng 15 250 50 0 empty empty disconnect 20 6 0 8 -258631
 -1 -1;
 #X obj 115 140 bng 15 250 50 0 empty empty connect 20 6 0 8 -3924 -1
@@ -129,13 +129,13 @@
 #X connect 6 0 1 0;
 #X connect 7 0 2 0;
 #X coords 0 -1 1 1 162 56 1 103 106;
-#X restore 49 432 pd sendToIosono;
+#X restore 388 844 pd sendToIosono;
 #X obj 34 544 positiongeneratorXYZ 2;
 #X msg 388 705 sendtyped /pos/DJ fff \$1 \$2 \$3;
 #X msg 389 770 sendtyped /pos/EWI fff \$1 \$2 \$3;
-#N canvas 2741 -26 587 375 randomXYZ 0;
+#N canvas 2741 0 587 375 randomXYZ 0;
 #X obj 70 90 metro 500;
-#X obj 68 -10 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 68 -10 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 94 -83 loadbang;
 #X obj 70 222 outlet;
@@ -188,9 +188,8 @@
 #X obj 26 122 mrpeach/routeOSC /sound/BAS /sound/FX /sound/KEYS /sound/SYNTHBAS
 /sound/DJ /sound/EWI /sound/DRUMS /sound/EXTRA, f 119;
 #X obj 497 210 unpack f f f;
-#X obj 53 246 iosono 3;
-#X obj 691 977 iosono 6;
-#N canvas 2680 -18 721 622 linearXmover 0;
+#X obj 738 788 iosono 6;
+#N canvas 2680 0 721 622 linearXmover 0;
 #N canvas 1027 302 910 562 linearnoise 0;
 #X obj 103 231 t b f;
 #X obj 125 260 +, f 2;
@@ -276,7 +275,7 @@
 #X connect 6 0 3 0;
 #X connect 6 0 4 0;
 #X coords 0 -1 1 1 238 130 1 51 109;
-#X restore 721 800 pd linearXmover;
+#X restore 769 611 pd linearXmover;
 #X floatatom 987 234 5 1 10 0 Xscale - Xscale, f 5;
 #X msg 989 205 9;
 #X msg 1026 204 9;
@@ -285,7 +284,7 @@
 #X obj 988 166 loadbang;
 #X floatatom 1027 255 5 1 10 0 Yscale - Yscale, f 5;
 #X floatatom 1064 235 5 1 10 0 Zscale - Zscale, f 5;
-#N canvas 2601 -20 450 300 scale2UnityXZY 1;
+#N canvas 2601 0 450 300 scale2UnityXZY 1;
 #X obj 78 153 pack f f f;
 #X obj 78 185 outlet;
 #X obj 75 54 inlet;
@@ -328,31 +327,34 @@
 #X obj 35 779 spigot;
 #X obj 68 752 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
+#X floatatom 1082 728 5 0 0 0 - - -, f 5;
+#X obj 1338 826 print;
+#X obj 44 314 iosono 3;
 #X connect 1 0 0 0;
 #X connect 6 0 10 0;
-#X connect 7 0 33 0;
-#X connect 9 0 24 0;
-#X connect 9 1 24 1;
-#X connect 9 2 24 2;
+#X connect 7 0 32 0;
+#X connect 9 0 23 0;
+#X connect 9 1 23 1;
+#X connect 9 2 23 2;
 #X connect 11 3 12 0;
-#X connect 12 0 13 15;
-#X connect 12 1 13 16;
-#X connect 12 2 13 17;
-#X connect 15 0 14 2;
-#X connect 15 1 14 3;
-#X connect 15 2 14 4;
-#X connect 17 0 16 0;
+#X connect 13 0 5 0;
+#X connect 14 0 13 2;
+#X connect 14 1 13 3;
+#X connect 14 2 13 4;
+#X connect 16 0 15 0;
+#X connect 17 0 21 0;
 #X connect 18 0 22 0;
-#X connect 19 0 23 0;
-#X connect 21 0 17 0;
-#X connect 21 0 18 0;
-#X connect 21 0 19 0;
-#X connect 24 0 7 0;
-#X connect 26 0 29 0;
-#X connect 27 0 31 0;
-#X connect 27 0 32 0;
-#X connect 27 0 26 0;
-#X connect 31 0 25 0;
-#X connect 32 0 28 0;
-#X connect 33 0 4 0;
-#X connect 34 0 33 1;
+#X connect 20 0 16 0;
+#X connect 20 0 17 0;
+#X connect 20 0 18 0;
+#X connect 23 0 7 0;
+#X connect 25 0 28 0;
+#X connect 26 0 30 0;
+#X connect 26 0 31 0;
+#X connect 26 0 25 0;
+#X connect 30 0 24 0;
+#X connect 31 0 27 0;
+#X connect 32 0 4 0;
+#X connect 33 0 32 1;
+#X connect 34 0 13 14;
+#X connect 36 0 5 0;
