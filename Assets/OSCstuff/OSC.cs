@@ -162,7 +162,7 @@ public class UDPPacketIO
 			Sender = new UdpClient();
 			Debug.Log("Opening OSC listener on port " + localPort);
 			
-			IPEndPoint listenerIp = new IPEndPoint(IPAddress.Parse("192.168.1.134"), localPort);//IPAddress.Any
+			IPEndPoint listenerIp = new IPEndPoint(IPAddress.Parse("localhost"), localPort);//IPAddress.Any
 			Debug.Log("ListenerIP = "+listenerIp.ToString());
 			Receiver = new UdpClient(listenerIp);
 			
