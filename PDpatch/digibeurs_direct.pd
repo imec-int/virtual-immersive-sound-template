@@ -1,4 +1,4 @@
-#N canvas 833 0 822 947 10;
+#N canvas 833 23 822 947 10;
 #X obj 812 878 cnv 15 1368 596 empty empty dynamic\ sound\ positioners
 20 12 1 50 -67617 -66577 0;
 #X obj 57 57 mrpeach/unpackOSC;
@@ -284,7 +284,7 @@
 #X obj 126 321 mrpeach/packOSC;
 #X obj 105 349 mrpeach/udpsend;
 #X obj 179 388 tgl 17 0 empty empty connected 22 8 0 8 -1 -262144 -1
-1 1;
+0 1;
 #X obj 114 377 bng 15 250 50 0 empty empty disconnect 20 6 0 8 -258631
 -1 -1;
 #X obj 114 395 bng 15 250 50 0 empty empty connect 20 6 0 8 -3924 -1
@@ -312,7 +312,7 @@
 #X obj 127 66 mrpeach/packOSC;
 #X obj 106 94 mrpeach/udpsend;
 #X obj 180 133 tgl 17 0 empty empty connected 22 8 0 8 -1 -262144 -1
-1 1;
+0 1;
 #X obj 115 122 bng 15 250 50 0 empty empty disconnect 20 6 0 8 -258631
 -1 -1;
 #X obj 115 140 bng 15 250 50 0 empty empty connect 20 6 0 8 -3924 -1
