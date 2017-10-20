@@ -1,4 +1,4 @@
-#N canvas 456 0 1191 940 10;
+#N canvas 456 23 1191 940 10;
 #X obj 812 878 cnv 15 1368 596 empty empty dynamic\ sound\ positioners
 20 12 1 50 -67617 -66577 0;
 #X obj 57 57 mrpeach/unpackOSC;
@@ -315,7 +315,7 @@
 #X obj 126 321 mrpeach/packOSC;
 #X obj 105 349 mrpeach/udpsend;
 #X obj 179 388 tgl 17 0 empty empty connected 22 8 0 8 -1 -262144 -1
-1 1;
+0 1;
 #X obj 114 377 bng 15 250 50 0 empty empty disconnect 20 6 0 8 -258631
 -1 -1;
 #X obj 114 395 bng 15 250 50 0 empty empty connect 20 6 0 8 -3924 -1
@@ -343,7 +343,7 @@
 #X obj 127 66 mrpeach/packOSC;
 #X obj 106 94 mrpeach/udpsend;
 #X obj 180 133 tgl 17 0 empty empty connected 22 8 0 8 -1 -262144 -1
-1 1;
+0 1;
 #X obj 115 122 bng 15 250 50 0 empty empty disconnect 20 6 0 8 -258631
 -1 -1;
 #X obj 115 140 bng 15 250 50 0 empty empty connect 20 6 0 8 -3924 -1
@@ -367,7 +367,7 @@
 #X obj 1443 1291 positiongeneratorXYZ 2;
 #N canvas 530 282 587 375 randomXYZ 0;
 #X obj 70 90 metro 500;
-#X obj 66 -12 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 66 -12 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 147 -66 loadbang;
 #X obj 70 222 outlet;
@@ -428,7 +428,7 @@
 #X msg 1432 1400 sendtyped /pos/DRUMS fff \$1 \$2 \$3;
 #X obj 55 85 mrpeach/routeOSC /sound/BAS /sound/FX /sound/KEYS /sound/SYNTHBAS
 /sound/DJ /sound/EWI /sound/DRUMS /sound/EXTRA, f 119;
-#N canvas 2680 0 721 622 linearXmover 0;
+#N canvas 2680 22 721 622 linearXmover 0;
 #N canvas 1027 302 910 562 linearnoise 0;
 #X obj 103 231 t b f;
 #X obj 125 260 +, f 2;
@@ -520,7 +520,7 @@
 #X obj 1294 36 loadbang;
 #X floatatom 1333 123 5 1 10 0 Yscale - Yscale, f 5;
 #X floatatom 1370 103 5 1 10 0 Zscale - Zscale, f 5;
-#N canvas 2601 0 450 300 scale2UnityXZY 0;
+#N canvas 2601 22 450 300 scale2UnityXZY 0;
 #X obj 78 153 pack f f f;
 #X obj 78 185 outlet;
 #X obj 75 54 inlet;
@@ -565,13 +565,13 @@
 #X msg 1370 72 5;
 #X obj 122 252 spigot;
 #X obj 147 223 tgl 15 0 empty empty enable_print: -77 8 0 10 -4034
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 120 282 print received;
 #X obj 28 451 iosono 1;
 #X obj 29 387 scaleUnity2normXYZ;
 #X msg 896 1090 sendtyped /pos/DRUMS fff \$1 \$2 \$3;
 #X obj 893 1122 iosono 10;
-#N canvas 2601 0 450 300 scale2UnityXZY 0;
+#N canvas 2601 22 450 300 scale2UnityXZY 0;
 #X obj 78 153 pack f f f;
 #X obj 78 185 outlet;
 #X obj 75 54 inlet;
@@ -649,7 +649,7 @@
 #X text 343 382 from:;
 #X obj 265 271 route received total from multicast;
 #X connect 1 0 10 0;
-#X connect 1 0 29 0;
+#X connect 1 0 39 0;
 #X connect 2 0 1 0;
 #X connect 2 1 75 0;
 #X connect 7 0 9 0;
@@ -661,7 +661,6 @@
 #X connect 8 2 35 4;
 #X connect 8 3 4 3;
 #X connect 10 0 33 0;
-#X connect 10 0 39 0;
 #X connect 10 1 47 0;
 #X connect 10 2 49 0;
 #X connect 10 3 50 0;
