@@ -666,8 +666,8 @@
 #X connect 10 3 50 0;
 #X connect 10 4 58 0;
 #X connect 10 5 53 0;
-#X connect 10 6 54 0;
 #X connect 10 6 29 0;
+#X connect 10 6 54 0;
 #X connect 10 7 55 0;
 #X connect 11 0 44 2;
 #X connect 11 1 44 3;
