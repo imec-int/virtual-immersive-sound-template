@@ -1,4 +1,4 @@
-#N canvas 456 23 1191 940 10;
+#N canvas 833 0 822 947 10;
 #X obj 812 878 cnv 15 1368 596 empty empty dynamic\ sound\ positioners
 20 12 1 50 -67617 -66577 0;
 #X obj 57 57 mrpeach/unpackOSC;
@@ -284,7 +284,7 @@
 #X obj 126 321 mrpeach/packOSC;
 #X obj 105 349 mrpeach/udpsend;
 #X obj 179 388 tgl 17 0 empty empty connected 22 8 0 8 -1 -262144 -1
-0 1;
+1 1;
 #X obj 114 377 bng 15 250 50 0 empty empty disconnect 20 6 0 8 -258631
 -1 -1;
 #X obj 114 395 bng 15 250 50 0 empty empty connect 20 6 0 8 -3924 -1
@@ -312,7 +312,7 @@
 #X obj 127 66 mrpeach/packOSC;
 #X obj 106 94 mrpeach/udpsend;
 #X obj 180 133 tgl 17 0 empty empty connected 22 8 0 8 -1 -262144 -1
-0 1;
+1 1;
 #X obj 115 122 bng 15 250 50 0 empty empty disconnect 20 6 0 8 -258631
 -1 -1;
 #X obj 115 140 bng 15 250 50 0 empty empty connect 20 6 0 8 -3924 -1
@@ -483,7 +483,7 @@
 #X connect 6 0 3 0;
 #X connect 6 0 4 0;
 #X coords 0 -1 1 1 238 130 1 51 109;
-#X restore 1533 903 pd linearXmover;
+#X restore 1493 893 pd linearXmover;
 #X floatatom 1293 102 5 1 10 0 Xscale - Xscale, f 5;
 #X text 1404 77 phospohtron measures;
 #X obj 1294 36 loadbang;
@@ -505,7 +505,7 @@
 -1 -1 0 1;
 #X obj 120 282 print received;
 #X obj 28 451 iosono 1;
-#X obj 29 387 scaleUnity2normXYZ;
+#X obj 52 382 scaleUnity2normXYZ;
 #X msg 896 1090 sendtyped /pos/DRUMS fff \$1 \$2 \$3;
 #X obj 893 1122 iosono 10;
 #X obj 1790 1017 metro 10000;
@@ -527,7 +527,7 @@
 #X obj 579 456 iosono 2;
 #X obj 1127 389 scaleUnity2normXYZ;
 #X obj 1660 389 scaleUnity2normXYZ;
-#X obj 1126 453 iosono 3;
+#X obj 1134 449 iosono 3;
 #X obj 1659 453 iosono 4;
 #X obj 586 572 scaleUnity2normXYZ;
 #X obj 1117 585 scaleUnity2normXYZ;
@@ -555,17 +555,21 @@
 #X obj 265 271 route received total from multicast;
 #X obj 1528 1078 scale2UnityXZY;
 #X obj 895 1063 scale2UnityXZY;
+#X obj 1124 793 spigot;
+#X obj 1165 760 tgl 15 0 empty empty enable_print: -77 8 0 10 -4034
+-1 -1 0 1;
+#X obj 1100 827 print dantesend;
 #X connect 1 0 10 0;
 #X connect 1 0 37 0;
 #X connect 2 0 1 0;
 #X connect 2 1 73 0;
 #X connect 7 0 9 0;
-#X connect 8 0 34 2;
 #X connect 8 0 75 0;
-#X connect 8 1 34 3;
+#X connect 8 0 34 2;
 #X connect 8 1 75 1;
-#X connect 8 2 34 4;
+#X connect 8 1 34 3;
 #X connect 8 2 75 2;
+#X connect 8 2 34 4;
 #X connect 8 3 4 3;
 #X connect 10 0 32 0;
 #X connect 10 1 45 0;
@@ -576,12 +580,12 @@
 #X connect 10 6 28 0;
 #X connect 10 6 52 0;
 #X connect 10 7 53 0;
-#X connect 11 0 42 2;
 #X connect 11 0 74 0;
-#X connect 11 1 42 3;
+#X connect 11 0 42 2;
 #X connect 11 1 74 1;
-#X connect 11 2 42 4;
+#X connect 11 1 42 3;
 #X connect 11 2 74 2;
+#X connect 11 2 42 4;
 #X connect 14 0 25 0;
 #X connect 14 0 26 0;
 #X connect 14 0 27 0;
@@ -644,6 +648,7 @@
 #X connect 56 1 55 3;
 #X connect 56 2 55 4;
 #X connect 57 0 6 0;
+#X connect 57 0 76 0;
 #X connect 58 0 6 0;
 #X connect 59 0 6 1;
 #X connect 59 0 4 0;
@@ -660,3 +665,5 @@
 #X connect 73 3 69 0;
 #X connect 74 0 60 0;
 #X connect 75 0 33 0;
+#X connect 76 0 78 0;
+#X connect 77 0 76 1;

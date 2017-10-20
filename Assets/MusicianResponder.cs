@@ -10,6 +10,7 @@ public class MusicianResponder : MonoBehaviour
 	private float OrbitSpeed = 100.0f;
 	public bool receiver=false;
 	private Vector3 coord;
+	public bool printObject= false;
 	public enum swirl
 	{
 		nothing,
@@ -29,7 +30,7 @@ public class MusicianResponder : MonoBehaviour
 			coord = new Vector3 (0f, 0f, 0f);
 			Debug.Log("/pos/"+my_collider.name.ToString());
 
-			osc.SetAddressHandler ("/pos/"+my_collider.name.ToString(), OnReceiveBAS);
+			osc.SetAddressHandler ("/pos/"+my_collider.name.ToString(), OnReceiveOsc);
 		}
 		//ctrlObject = new ControllerGrabObject ();
 	}
@@ -56,9 +57,10 @@ public class MusicianResponder : MonoBehaviour
 		if (receiver) {
 		// we  place the object based on the X,Y,Z coordinates received from OSC messages
 			my_collider.transform.position=coord;
+			//Debug.Log (coord.ToString ());
 		}
 		if (!receiver) {
-			Debug.Log ("not receiver");
+			//Debug.Log ("not receiver");
 			float pullForce = 100f;
 			Vector3 forceDirection = transform.position - my_collider.transform.position;
 			my_collider.AddForce(forceDirection.normalized * pullForce * Time.deltaTime);
@@ -76,12 +78,12 @@ public class MusicianResponder : MonoBehaviour
 		message.values.Add (my_collider.transform.position.x);
 		message.values.Add (my_collider.transform.position.y);
 		message.values.Add (my_collider.transform.position.z);
-		//Debug.Log("OSC Message: " + message);
+		if(printObject)Debug.Log("OSC Message: " + message);
 		osc.Send (message);
 	}
 
 
-	void OnReceiveBAS (OscMessage message)
+	void OnReceiveOsc (OscMessage message)
 	{
 		coord = new Vector3(message.GetFloat(0), message.GetFloat(1), message.GetFloat(2));
 		Debug.Log (my_collider.name.ToString()+" "+coord.ToString());	
