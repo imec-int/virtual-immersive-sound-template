@@ -78,7 +78,7 @@ public class MusicianResponder : MonoBehaviour
 		message.values.Add (my_collider.transform.position.x);
 		message.values.Add (my_collider.transform.position.y);
 		message.values.Add (my_collider.transform.position.z);
-		if(printObject)Debug.Log("OSC Message: " + message);
+//		if(printObject)Debug.Log("OSC Message: " + message);
 		osc.Send (message);
 	}
 
@@ -86,7 +86,7 @@ public class MusicianResponder : MonoBehaviour
 	void OnReceiveOsc (OscMessage message)
 	{
 		coord = new Vector3(message.GetFloat(0), message.GetFloat(1), message.GetFloat(2));
-		Debug.Log (my_collider.name.ToString()+" "+coord.ToString());	
+//		Debug.Log (my_collider.name.ToString()+" "+coord.ToString());	
 	}
 
 

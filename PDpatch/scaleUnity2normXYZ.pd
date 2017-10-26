@@ -1,9 +1,9 @@
-#N canvas 4 23 1916 1132 10;
+#N canvas 0 0 1648 940 10;
 #X obj 228 211 outlet;
-#X obj 369 72 r uXscale;
-#X obj 433 72 r uYscale;
-#X obj 366 99 / 2;
-#X obj 437 100 / 2;
+#X obj 22 21 r uXscale;
+#X obj 202 20 r uYscale;
+#X obj 19 48 / 2;
+#X obj 206 48 / 2;
 #X obj 154 85 /;
 #X obj 95 71 /;
 #X obj 205 98 /;
@@ -14,7 +14,7 @@
 #X obj 279 211 outlet;
 #X obj 95 21 unpack f f f;
 #X obj 95 -6 inlet;
-#X obj 496 72 r uZscale;
+#X obj 308 52 r uZscale;
 #X connect 1 0 3 0;
 #X connect 2 0 4 0;
 #X connect 3 0 6 1;

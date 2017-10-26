@@ -1,18 +1,17 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\OSCstuff\OSC.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MusicianResponder.cs">
     <Files>
-      <File FileName="Assets\MusicianResponder.cs" Line="1" Column="1" />
+      <File FileName="Assets\MusicianResponder.cs" Line="89" Column="29" />
       <File FileName="Assets\AdditionalFeatures.cs" Line="1" Column="1" />
       <File FileName="Assets\OSCstuff\OscReceiveHandler.cs" Line="1" Column="1" />
-      <File FileName="Assets\OSCstuff\OSC.cs" Line="126" Column="27" />
       <File FileName="Assets\Scripts\ControllerGrabObject.cs" Line="1" Column="1" />
       <File FileName="Assets\ObjectPuller.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="C:\Users\apt\Documents\virtual-immersive-sound-template\Assets\MusicianResponder.cs" line="77" column="36" />
+      <Breakpoint file="C:\Users\apt\Documents\virtual-immersive-sound-template\Assets\MusicianResponder.cs" line="78" column="36" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
