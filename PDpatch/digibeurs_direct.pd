@@ -1,4 +1,4 @@
-#N canvas -29 6 1648 963 10;
+#N canvas -97 193 1648 963 10;
 #X obj 812 878 cnv 15 1368 596 empty empty dynamic\ sound\ positioners
 20 12 1 50 -67617 -66577 0;
 #X obj 57 57 mrpeach/unpackOSC;
@@ -318,19 +318,19 @@
 #X obj 115 140 bng 15 250 50 0 empty empty connect 20 6 0 8 -3924 -1
 -1;
 #X obj 93 -62 inlet, f 7;
-#X msg 84 8 connect 192.168.1.10 4243;
 #X obj 169 -59 inlet, f 7;
 #X obj 176 -28 select 1;
+#X msg 84 8 connect 10.100.20.10 4243;
 #X connect 0 0 2 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 4 0 0 0;
-#X connect 5 0 7 0;
+#X connect 5 0 9 0;
 #X connect 6 0 1 0;
-#X connect 7 0 2 0;
-#X connect 8 0 9 0;
-#X connect 9 0 5 0;
-#X connect 9 1 4 0;
+#X connect 7 0 8 0;
+#X connect 8 0 5 0;
+#X connect 8 1 4 0;
+#X connect 9 0 2 0;
 #X coords 0 -1 1 1 162 56 1 103 106;
 #X restore 77 1003 pd sendToIosono;
 #X obj 1443 1291 positiongeneratorXYZ 2;

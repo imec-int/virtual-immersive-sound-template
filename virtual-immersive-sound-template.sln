@@ -1,9 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "virtual-immersive-sound-template", "Assembly-CSharp.csproj", "{60C65E61-55D6-6400-DEEE-84CCDE4B8606}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "virtual-immersive-sound-template", "virtual-immersive-sound-template.csproj", "{4F7F8264-A177-A7BF-C401-BC0210EC44D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "virtual-immersive-sound-template", "Assembly-CSharp-Editor.csproj", "{79F6CD93-D076-4E1B-B554-151FB29B1879}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "virtual-immersive-sound-template.Editor", "virtual-immersive-sound-template.Editor.csproj", "{4CEC6830-9E1F-FF7B-D3BF-44BE08D09805}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,19 +11,16 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{60C65E61-55D6-6400-DEEE-84CCDE4B8606}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{60C65E61-55D6-6400-DEEE-84CCDE4B8606}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{60C65E61-55D6-6400-DEEE-84CCDE4B8606}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{60C65E61-55D6-6400-DEEE-84CCDE4B8606}.Release|Any CPU.Build.0 = Release|Any CPU
-		{79F6CD93-D076-4E1B-B554-151FB29B1879}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{79F6CD93-D076-4E1B-B554-151FB29B1879}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{79F6CD93-D076-4E1B-B554-151FB29B1879}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{79F6CD93-D076-4E1B-B554-151FB29B1879}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F7F8264-A177-A7BF-C401-BC0210EC44D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F7F8264-A177-A7BF-C401-BC0210EC44D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F7F8264-A177-A7BF-C401-BC0210EC44D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F7F8264-A177-A7BF-C401-BC0210EC44D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CEC6830-9E1F-FF7B-D3BF-44BE08D09805}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CEC6830-9E1F-FF7B-D3BF-44BE08D09805}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CEC6830-9E1F-FF7B-D3BF-44BE08D09805}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CEC6830-9E1F-FF7B-D3BF-44BE08D09805}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
